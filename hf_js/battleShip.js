@@ -1,4 +1,6 @@
-// DECLARE three variables to hold the location of each cell of the ship. Let’s call them
+// DECLARE three variables to hold the location of each cell of the ship. 
+// The built-in Math.random() function will be used to generate a random number between 0 and 5.
+// The Math.floor() function will be used to round the number down to the nearest whole number.
 var randomLoc = Math.floor(Math.random() * 5);
 var location1 = randomLoc;
 var location2 = location1 + 1;
