@@ -38,7 +38,6 @@ function displayCar(car) {
     var carToSell = makeCar();
     displayCar(carToSell);
 
-
     var fiat = {
         make: "Fiat",
         model: "500",
@@ -52,16 +51,15 @@ function displayCar(car) {
         started: false,
         // And here's a two methods to start and stop the car.
         start: function() {
-            started = true;
+            this.started = true;
+        },
+        stop: function() {
+            this.started = false;
         },
 
-        stop: function() {
-            started = false;
-        },
-        
         // A function can be added directly to an object like this.
         drive: function() {
-            if (started) {
+            if (this.started) {
             alert("Zoom zoom!");
             } else {
             alert("You need to start the engine first.");
