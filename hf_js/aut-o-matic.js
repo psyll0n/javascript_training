@@ -1,4 +1,3 @@
-
 function makeCar() {
 
     /* We have several makes, models, years and colors to 
@@ -38,3 +37,34 @@ function displayCar(car) {
     }
     var carToSell = makeCar();
     displayCar(carToSell);
+
+
+    var fiat = {
+        make: "Fiat",
+        model: "500",
+        year: 1957,
+        color: "Medium Blue",
+        passengers: 2,
+        convertible: false,
+        mileage: 88000,
+        /* Here's the property to hold the current state of the
+        engine (true if it is started and false if it is off). */
+        started: false,
+        // And here's a two methods to start and stop the car.
+        start: function() {
+            started = true;
+        },
+
+        stop: function() {
+            started = false;
+        },
+        
+        // A function can be added directly to an object like this.
+        drive: function() {
+            if (started) {
+            alert("Zoom zoom!");
+            } else {
+            alert("You need to start the engine first.");
+        }
+    }
+}
