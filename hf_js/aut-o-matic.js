@@ -51,7 +51,11 @@ function displayCar(car) {
         started: false,
         // And here's a two methods to start and stop the car.
         start: function() {
-            this.started = true;
+            if (this.fuel == 0) {
+                    alert("The car is on empty, fill up before starting!");
+                } else {
+                this.started = true;
+            }
         },
         stop: function() {
             this.started = false;
@@ -60,9 +64,19 @@ function displayCar(car) {
         // A function can be added directly to an object like this.
         drive: function() {
             if (this.started) {
-            alert("Zoom zoom!");
+                if (this.fuel > 0) {
+                    alert(this.make + " " +
+                this.model + " goes zoom zoom!");
+                this.fuel = this.fuel - 1;
             } else {
-            alert("You need to start the engine first.");
-        }
+                alert("Uh oh, out of fuel.");
+                this.stop();
+            }
+            } else {
+                alert("You need to start the engine first.");
+            }
+        },
+        addFuel: function(amount) {
+            this.fuel = this.fuel + amount;
     }
 }
